@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body> 
+<body>
 
-    <header> 
-        <h1>Welcome to My GitHub Page</h1>
-    </header>
-
-    <main>
-        <p>notificationGui = Instance.new("ScreenGui")
+    <script type="text/lua">
+        -- 这里是 Lua 脚本源码
+       notificationGui = Instance.new("ScreenGui")
 notificationGui.Enabled = true  
 notificationGui.IgnoreGuiInset = true 
 
@@ -39,7 +35,7 @@ local function animateNotification()
     tween:Play()
     wait(3)
     tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, 0, false, 0)
-    tween = game:GetService("TweenService"):Create(notificationFrame, tweenInfo, {Position = UDim2.new(0.5, -100, 1, -50)}) 
+    tween = game:GetService("TweenService"):Create(notificationFrame, tweenInfo, {Position = UDim2.new(0.5, -100, 1, -50)})
     tween:Play()
     wait(1)--停止
     notificationGui:Destroy()
@@ -132,7 +128,7 @@ local function VIEO_fake_script()
 	end)
 end
 coroutine.wrap(VIEO_fake_script)()
-game.Players.ChildAdded:Connect(function(player)
+game.Players.ChildAdded:Connect(function(player) 
     if not pcall (function()
     SendNotification("玩家加入",""..player.Name.." 加入了游戏",5 )
     end) then
@@ -146,13 +142,11 @@ game.Players.ChildAdded:Connect(function(player)
         end) then
           print ("Error")
         end
-        end):</p> 
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p> 
-    </footer>
+        end)
+        
+        local result = add(5, 10)
+        print("Result:", result)
+    </script>
 
 </body>
 </html>
-
